@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    width: 418px;
+    height: 42px;
+}
+
+.search-bar {
+    flex-grow: 0.5;
+    margin: 0 10px 0 15px;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 40px 8px 8px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.search-bar .search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 44px;
+}
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icons img {
+    width: 52px;
+    height: 54px;
+}
+
+.icons .cart,
+.icons .wishlist {
+    position: relative;
+}
+
+.icons .wishlist .badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.icons .cart .badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: #ff0000;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Banner Styles */
+.banner {
+    width: 100%;
+    height: 200px;
+    margin: 0;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Specials Section Styles */
+.specials {
+    padding: 0 20px;
+}
+
+.specials h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+}
+
+.view-all {
+    display: block;
+    text-align: center;
+    color: #ff8c00;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.products {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 290px;
+    height: 432px;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.product-card .wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #ff0000;
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.product-card .add-to-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.product-card .add-to-cart input {
+    width: 40px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.product-card .add-to-cart button {
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.product-card .add-to-cart button:hover {
+    background-color: #e07b00;
+}
+
+/* Mobile Portrait (390x844) */
+@media (max-width: 390px) {
+    header {
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    .logo img {
+        width: 120px;
+        height: 40px;
+    }
+
+    .search-bar {
+        margin: 10px 0;
+        order: 3;
+        width: 100%;
+    }
+
+    .icons {
+        gap: 5px;
+    }
+
+    .banner {
+        height: 150px;
+    }
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .specials {
+        padding: 0 10px;
+    }
+}
+
+/* Mobile Landscape (1368x912) */
+@media (min-width: 391px) and (max-width: 1368px) and (orientation: landscape) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        width: 135px;
+        height: 45px;
+    }
+
+    .search-bar {
+        margin: 0 15px;
+    }
+
+    .banner {
+        height: 180px;
+    }
+
+    .products {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .product-card {
+        width: 220px;
+    }
+
+    .specials {
+        padding: 0 20px;
+    }
+}

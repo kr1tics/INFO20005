@@ -3,9 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exotic Groceries</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header>
+        <div class="menu-icon">
+            <img src="images/menu.svg" alt="Menu">
+        </div>
+        <div class="logo">
+            <img src="images/store_logo.png" alt="Exotic Groceries Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+            <img src="images/search.svg" alt="Search" class="search-icon">
+        </div>
+        <div class="icons">
+            <img src="images/account.svg" alt="Account">
+            <div class="wishlist">
+                <img src="images/wishlist.svg" alt="Wishlist">
+                <span class="badge">0</span>
+            </div>
+            <div class="cart">
+                <img src="images/cart.svg" alt="Cart">
+                <span class="badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="banner">
+        <img src="images/banner.png" alt="Orange Banner">
+    </div>
+
+    <section class="specials">
+        <h2>SPECIALS</h2>
+        <a href="#" class="view-all">VIEW ALL SPECIALS</a>
+        <div class="products">
+            <div class="product-card">
+                <img src="images/indomie.png" alt="Indomie Mi Goreng Noodle 85g">
+                <img class="wishlist" src="images/heart.svg" alt="Wishlist">
+                <h3>INDOMIE MI GORENG NOODLE 85G</h3>
+                <p>$0.70 ea</p>
+                <div class="add-to-cart">
+                    <input type="number" value="0" min="0">
+                    <button onclick="addToCart('Indomie Mi Goreng Noodle 85g')">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/shin.png" alt="Nongshim Shin Ramyun Noodle Soup 120g">
+                <img class="wishlist" src="images/heart.svg" alt="Wishlist">
+                <h3>NONGSHIM SHIN RAMYUN NOODLE SOUP 120G</h3>
+                <p>$1.60 ea</p>
+                <div class="add-to-cart">
+                    <input type="number" value="0" min="0">
+                    <button onclick="addToCart('Nongshim Shin Ramyun Noodle Soup 120g')">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/samyang.png" alt="Samyang Carbo Hot Chicken Flv Ramen 130g">
+                <img class="wishlist" src="images/heart.svg" alt="Wishlist">
+                <h3>SAMYANG CARBO HOT CHICKEN FLV RAMEN 130G</h3>
+                <p>$3.40 ea</p>
+                <div class="add-to-cart">
+                    <input type="number" value="0" min="0">
+                    <button onclick="addToCart('Samyang Carbo Hot Chicken Flv Ramen 130g')">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="images/indomie.png" alt="Indomie Mi Goreng Noodle 85g">
+                <img class="wishlist" src="images/heart.svg" alt="Wishlist">
+                <h3>INDOMIE MI GORENG NOODLE 85G</h3>
+                <p>$0.70 ea</p>
+                <div class="add-to-cart">
+                    <input type="number" value="0" min="0">
+                    <button onclick="addToCart('Indomie Mi Goreng Noodle 85g')">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
