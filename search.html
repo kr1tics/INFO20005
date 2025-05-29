@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk - Exotic Groceries</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <header>
+        <div class="menu-icon">
+            <img src="images/menu.svg" alt="Menu">
+        </div>
+        <div class="logo">
+            <img src="images/store_logo.png" alt="Exotic Groceries Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products..." oninput="showSuggestions(this.value)">
+            <img src="images/search.svg" alt="Search" class="search-icon">
+            <div class="suggestions" id="suggestions"></div>
+        </div>
+        <div class="icons">
+            <img src="images/account.svg" alt="Account">
+            <div class="wishlist">
+                <img src="images/wishlist.svg" alt="Wishlist">
+                <span class="badge">0</span>
+            </div>
+            <div class="cart">
+                <img src="images/cart.svg" alt="Cart">
+                <span class="badge">0</span>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
