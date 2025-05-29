@@ -42,46 +42,86 @@
         <div class="products">
             <div class="product-card">
                 <img src="images/indomie.png" alt="Indomie Mi Goreng Noodle 85g">
-                <img class="wishlist" src="images/heart.svg" alt="Wishlist">
+                <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('Indomie Mi Goreng Noodle 85g')"> 
                 <h3>INDOMIE MI GORENG NOODLE 85G</h3>
                 <p>$0.70 ea</p>
                 <div class="add-to-cart">
                     <input type="number" value="0" min="0">
-                    <button onclick="addToCart('Indomie Mi Goreng Noodle 85g')">ADD TO CART</button>
+                    <button onclick="addToCart('Indomie Mi Goreng Noodle 85g', this)">ADD TO CART</button>
                 </div>
             </div>
             <div class="product-card">
                 <img src="images/shin.png" alt="Nongshim Shin Ramyun Noodle Soup 120g">
-                <img class="wishlist" src="images/heart.svg" alt="Wishlist">
+                <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('Nongshim Shin Ramyun Noodle Soup 120g')">
                 <h3>NONGSHIM SHIN RAMYUN NOODLE SOUP 120G</h3>
                 <p>$1.60 ea</p>
                 <div class="add-to-cart">
                     <input type="number" value="0" min="0">
-                    <button onclick="addToCart('Nongshim Shin Ramyun Noodle Soup 120g')">ADD TO CART</button>
+                    <button onclick="addToCart('Nongshim Shin Ramyun Noodle Soup 120g', this)">ADD TO CART</button>
                 </div>
             </div>
             <div class="product-card">
                 <img src="images/samyang.png" alt="Samyang Carbo Hot Chicken Flv Ramen 130g">
-                <img class="wishlist" src="images/heart.svg" alt="Wishlist">
+                <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('Samyang Carbo Hot Chicken Flv Ramen 130g')">
                 <h3>SAMYANG CARBO HOT CHICKEN FLV RAMEN 130G</h3>
                 <p>$3.40 ea</p>
                 <div class="add-to-cart">
                     <input type="number" value="0" min="0">
-                    <button onclick="addToCart('Samyang Carbo Hot Chicken Flv Ramen 130g')">ADD TO CART</button>
+                    <button onclick="addToCart('Samyang Carbo Hot Chicken Flv Ramen 130g', this)">ADD TO CART</button>
                 </div>
             </div>
             <div class="product-card">
                 <img src="images/indomie.png" alt="Indomie Mi Goreng Noodle 85g">
-                <img class="wishlist" src="images/heart.svg" alt="Wishlist">
+                <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('Indomie Mi Goreng Noodle 85g')">
                 <h3>INDOMIE MI GORENG NOODLE 85G</h3>
                 <p>$0.70 ea</p>
                 <div class="add-to-cart">
                     <input type="number" value="0" min="0">
-                    <button onclick="addToCart('Indomie Mi Goreng Noodle 85g')">ADD TO CART</button>
+                    <button onclick="addToCart('Indomie Mi Goreng Noodle 85g', this)">ADD TO CART</button>
                 </div>
             </div>
         </div>
     </section>
 
+    <script>
+        // Initialize cart and wishlist counts
+        let cartCount = 0;
+        let wishlistCount = 0;
+
+        // Function to update the cart badge
+        function updateCartBadge() {
+            const cartBadge = document.querySelector('.cart .badge');
+            cartBadge.textContent = cartCount;
+        }
+
+        // Function to update the wishlist badge
+        function updateWishlistBadge() {
+            const wishlistBadge = document.querySelector('.wishlist .badge');
+            wishlistBadge.textContent = wishlistCount;
+        }
+
+        // Function to add items to the cart
+        function addToCart(productName, button) {
+            // Get the quantity from the input field next to the button
+            const quantityInput = button.previousElementSibling;
+            const quantity = parseInt(quantityInput.value) || 0;
+
+            if (quantity > 0) {
+                // Increment the cart count by the quantity
+                cartCount += quantity;
+                updateCartBadge();
+                alert(`${quantity} x ${productName} added to cart!`);
+            } else {
+                alert('Please enter a quantity greater than 0.');
+            }
+        }
+
+        // Function to add items to the wishlist
+        function addToWishlist(productName) {
+            wishlistCount++;
+            updateWishlistBadge();
+            alert(`${productName} added to wishlist!`);
+        }
+    </script>
 </body>
 </html>
