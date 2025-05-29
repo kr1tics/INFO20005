@@ -16,8 +16,9 @@
             <img src="images/store_logo.png" alt="Exotic Groceries Logo">
         </div>
         <div class="search-bar">
-            <input type="text" placeholder="Search products...">
+            <input type="text" placeholder="Search products..." oninput="showSuggestions(this.value)">
             <img src="images/search.svg" alt="Search" class="search-icon">
+            <div class="suggestions" id="suggestions"></div>
         </div>
         <div class="icons">
             <img src="images/account.svg" alt="Account">
@@ -102,12 +103,10 @@
 
         // Function to add items to the cart
         function addToCart(productName, button) {
-            // Get the quantity from the input field next to the button
             const quantityInput = button.previousElementSibling;
             const quantity = parseInt(quantityInput.value) || 0;
 
             if (quantity > 0) {
-                // Increment the cart count by the quantity
                 cartCount += quantity;
                 updateCartBadge();
                 alert(`${quantity} x ${productName} added to cart!`);
@@ -121,6 +120,41 @@
             wishlistCount++;
             updateWishlistBadge();
             alert(`${productName} added to wishlist!`);
+        }
+
+        // Function to show search suggestions
+        function showSuggestions(inputValue) {
+            const suggestionsDiv = document.getElementById('suggestions');
+            suggestionsDiv.innerHTML = '';
+
+            if (inputValue.trim().toLowerCase() === 'milk') {
+                // Capitalize the first letter of the suggestion
+                const suggestionText = 'milk';
+                const capitalizedSuggestion = suggestionText.charAt(0).toUpperCase() + suggestionText.slice(1);
+
+                // Create suggestion item with icon and text
+                const suggestion = document.createElement('div');
+                suggestion.className = 'suggestion-item';
+
+                // Add search icon
+                const icon = document.createElement('img');
+                icon.src = 'images/search.svg';
+                icon.className = 'suggestion-icon';
+                suggestion.appendChild(icon);
+
+                // Add suggestion text
+                const text = document.createElement('span');
+                text.textContent = capitalizedSuggestion;
+                suggestion.appendChild(text);
+
+                // Add click event to fill search bar
+                suggestion.onclick = () => {
+                    document.querySelector('.search-bar input').value = capitalizedSuggestion;
+                    suggestionsDiv.innerHTML = ''; // Hide suggestions after selection
+                };
+
+                suggestionsDiv.appendChild(suggestion);
+            }
         }
     </script>
 </body>
