@@ -32,5 +32,183 @@
             </div>
         </div>
     </header>
+
+
+
+    <section class="search-results">
+        <h2>Search Results for "Milk"</h2>    
+        <div class="breadcrumb">
+        <a href="index.html">Home</a> &gt; Search Results for "Milk"
+        </div>
+        <div class="layout-container">
+            <div class="filter-sidebar">
+                <h3>Filter by Category</h3>
+                <label><input type="checkbox" name="category" value="noodles" onchange="filterProducts()"> Noodles</label>
+                <label><input type="checkbox" name="category" value="ramen" onchange="filterProducts()"> Ramen</label>
+            </div>
+            <div class="main-content">
+                <div class="sort-options">
+                    <label for="sort">Sort by:</label>
+                    <select id="sort" onchange="sortProducts()">
+                        <option value="relevance">Relevance</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/A2_LightMilk.png" alt="A2 Milk Light Milk 2L">
+                        <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('A2 Milk Light Milk 2L')">
+                        <h3>A2 Milk Light Milk 2L</h3>
+                        <p><b>$6.90</b> ea</p>
+                        <div class="add-to-cart">
+                            <input type="number" value="0" min="0">
+                            <button onclick="addToCart('A2 Milk Light Milk 2L', this)">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/A2_FullCream.png" alt="A2 Milk Full Cream Milk 2L">
+                        <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('A2 Milk Full Cream Milk 2L')">
+                        <h3>A2 Milk Full Cream Milk 2L</h3>
+                        <p><b>$6.90</b> ea</p>
+                        <div class="add-to-cart">
+                            <input type="number" value="0" min="0">
+                            <button onclick="addToCart('A2 Milk Full Cream Milk 2L', this)">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/DiaryFarm.png" alt="Dairy Farmers Full Cream Milk 2L">
+                        <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('Dairy Farmers Full Cream Milk 2L')">
+                        <h3>Dairy Farmers Full Cream Milk 2L</h3>
+                        <p><b>$4.30</b> ea</p>
+                        <div class="add-to-cart">
+                            <input type="number" value="0" min="0">
+                            <button onclick="addToCart('Dairy Farmers Full Cream Milk 2L', this)">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/Rivernia.png" alt="Riverina Fresh Full Cream Milk 2L">
+                        <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('Riverina Fresh Full Cream Milk 2L')">
+                        <h3>Riverina Fresh Full Cream Milk 2L</h3>
+                        <p><b>$4.60</b> ea</p>
+                        <div class="add-to-cart">
+                            <input type="number" value="0" min="0">
+                            <button onclick="addToCart('Riverina Fresh Full Cream Milk 2L', this)">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize cart and wishlist counts
+        let cartCount = 0;
+        let wishlistCount = 0;
+
+        // Function to update the cart badge
+        function updateCartBadge() {
+            const cartBadge = document.querySelector('.cart .badge');
+            cartBadge.textContent = cartCount;
+        }
+
+        // Function to update the wishlist badge
+        function updateWishlistBadge() {
+            const wishlistBadge = document.querySelector('.wishlist .badge');
+            wishlistBadge.textContent = wishlistCount;
+        }
+
+        // Function to add items to the cart
+        function addToCart(productName, button) {
+            const quantityInput = button.previousElementSibling;
+            const quantity = parseInt(quantityInput.value) || 0;
+
+            if (quantity > 0) {
+                cartCount += quantity;
+                updateCartBadge();
+                alert(`${quantity} x ${productName} added to cart!`);
+            } else {
+                alert('Please enter a quantity greater than 0.');
+            }
+        }
+
+        // Function to add items to the wishlist
+        function addToWishlist(productName) {
+            wishlistCount++;
+            updateWishlistBadge();
+            alert(`${productName} added to wishlist!`);
+        }
+
+        // Function to show search suggestions
+        function showSuggestions(inputValue) {
+            const suggestionsDiv = document.getElementById('suggestions');
+            suggestionsDiv.innerHTML = '';
+
+            if (inputValue.trim().toLowerCase() === 'milk') {
+                const suggestionText = 'milk';
+                const capitalizedSuggestion = suggestionText.charAt(0).toUpperCase() + suggestionText.slice(1);
+
+                const suggestion = document.createElement('div');
+                suggestion.className = 'suggestion-item';
+
+                const icon = document.createElement('img');
+                icon.src = 'images/search.svg';
+                icon.className = 'suggestion-icon';
+                suggestion.appendChild(icon);
+
+                const text = document.createElement('span');
+                text.textContent = capitalizedSuggestion;
+                suggestion.appendChild(text);
+
+                suggestion.onclick = () => {
+                    document.querySelector('.search-bar input').value = capitalizedSuggestion;
+                    suggestionsDiv.innerHTML = '';
+                };
+
+                suggestionsDiv.appendChild(suggestion);
+            }
+        }
+
+        // Function to filter products based on selected categories
+        function filterProducts() {
+            const checkboxes = document.querySelectorAll('.filter-sidebar input[name="category"]:checked');
+            const selectedCategories = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (selectedCategories.length === 0 || selectedCategories.includes(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Function to sort products based on selected option
+        function sortProducts() {
+            const sortOption = document.getElementById('sort').value;
+            const productCards = Array.from(document.querySelectorAll('.product-card'));
+            const productsGrid = document.querySelector('.products-grid');
+
+            productCards.sort((a, b) => {
+                const priceA = parseFloat(a.getAttribute('data-price'));
+                const priceB = parseFloat(b.getAttribute('data-price'));
+
+                if (sortOption === 'price-low') {
+                    return priceA - priceB;
+                } else if (sortOption === 'price-high') {
+                    return priceB - priceA;
+                } else {
+                    // Default to relevance (no sorting for now)
+                    return 0;
+                }
+            });
+
+            // Clear and re-append sorted cards
+            productsGrid.innerHTML = '';
+            productCards.forEach(card => productsGrid.appendChild(card));
+        }
+    </script>
 </body>
 </html>
