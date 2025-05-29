@@ -21,6 +21,7 @@ header {
 .logo img {
     width: 418px;
     height: 40px;
+    margin-left: -10px;
 }
 
 .search-bar {
@@ -148,8 +149,8 @@ header {
     top: 10px;
     right: 10px;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .product-card img {
@@ -168,8 +169,9 @@ header {
 
 .product-card p {
     font-size: 14px;
-    color: #ff0000;
-    margin-bottom: 10px;
+    color: #09122c;
+    margin-top: 50px;
+    margin-bottom: 50px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -181,22 +183,26 @@ header {
 }
 
 .product-card .add-to-cart input {
-    width: 40px;
-    padding: 5px;
-    text-align: center;
+    width: 140px;
+    height: 38px;
+    padding: 10px 10px;
+    margin-left: -20px;
+    text-align: left;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 6px;
     font-family: 'Open Sans', sans-serif;
 }
 
 .product-card .add-to-cart button {
-    background-color: #ff8c00;
+    background-color: #e17564;
     color: #fff;
+    width: 110px;
+    margin-right: -20px;
     border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 10px 10px 10px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
     font-family: 'Open Sans', sans-serif;
 }
 
