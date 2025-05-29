@@ -47,6 +47,45 @@ header {
     width: 34px;
     height: 44px;
 }
+
+.search-bar .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.search-bar .suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+.search-bar .suggestion-item:hover {
+    background-color: #f5f5f5;
+}
+
+.search-bar .suggestion-item .suggestion-icon {
+    width: 34px;
+    height: 44px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.search-bar .suggestion-item span {
+    font-weight: 600; 
+    text-decoration: underline;
+}
+
 .icons {
     display: flex;
     gap: 10px;
@@ -86,7 +125,6 @@ header {
     font-family: 'Open Sans', sans-serif;
 }
 
-/* Banner Styles */
 .banner {
     width: calc(100%-40%);
     height: 300px;
@@ -102,7 +140,6 @@ header {
     display: block;
 }
 
-/* Specials Section Styles */
 .specials {
     padding: 20px 40px;
 }
