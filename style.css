@@ -24,6 +24,12 @@ header {
     margin-left: -10px;
 }
 
+.logo2 img {
+    width: 418px;
+    height: 40px;
+    margin: 16px 16px 16px 16px;
+}
+
 .search-bar {
     flex-grow: 0.75;
     margin: 0 10px 0 5px;
