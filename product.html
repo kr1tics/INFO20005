@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon">
+            <img src="images/menu.svg" alt="Menu">
+        </div>
+        <div class="logo">
+            <img src="images/store_logo.png" alt="Exotic Groceries Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products..." oninput="showSuggestions(this.value)">
+            <img src="images/search.svg" alt="Search" class="search-icon">
+            <div class="suggestions" id="suggestions"></div>
+        </div>
+        <div class="icons">
+            <div class="icon-wrapper">
+                <img src="images/account.svg" alt="Account">
+                <span class="icon-label">Accounts</span>
+            </div>
+            <div class="icon-wrapper">
+                <div class="wishlist">
+                <img src="images/wishlist.svg" alt="Wishlist">
+                <span class="badge">0</span>
+                </div>
+                <span class="icon-label">Wishlist</span>
+            </div>
+            <div class="icon-wrapper">
+                <div class="cart">
+                    <img src="images/cart.svg" alt="Cart">
+                    <span class="badge">0</span>
+                 </div>
+                <span class="icon-label">Cart</span>
+            </div>
+        </div>
+    </header>
+    <div class="content-container">
+        <main>
+            <section class="product-details-section" style="display: flex; padding: 20px; gap: 20px; align-items: flex-start;">
+                <div style="flex: 0 0 auto;">
+                    <img src="images/product.png" alt="A2 Milk Light Milk 2L" style="width: 451px; height: 451px;">
+                </div>
+                <div style="flex: 1;">
+                    <h1 style="font-size: 24px; font-family: 'Noto Sans', sans-serif; font-weight: 700; margin-bottom: 10px;">A2 MILK LIGHT MILK 2L</h1>
+                    <p style="font-size: 24px; font-family: 'Open Sans', sans-serif; color: #09122c; margin-bottom: 20px;">$6.9</p>
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <button style="background-color: #fff; color: #666; border: 1px solid #ddd; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-family: 'Open Sans', sans-serif;">Save to wishlist</button>
+                        <button class="add-to-cart" style="background-color: #e17564; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-family: 'Open Sans', sans-serif;">ADD TO CART</button>
+                    </div>
+                    <details style="margin-bottom: 10px;">
+                        <summary style="font-family: 'Open Sans', sans-serif; font-weight: bold; cursor: pointer;">NUTRITIONAL INFORMATION</summary>
+                    </details>
+                    <details style="margin-bottom: 10px;">
+                        <summary style="font-family: 'Open Sans', sans-serif; font-weight: bold; cursor: pointer;">INGREDIENTS</summary>
+                    </details>
+                    <details style="margin-bottom: 10px;">
+                        <summary style="font-family: 'Open Sans', sans-serif; font-weight: bold; cursor: pointer;">ALLERGEN</summary>
+                    </details>
+                    <details style="margin-bottom: 10px;">
+                        <summary style="font-family: 'Open Sans', sans-serif; font-weight: bold; cursor: pointer;">USAGE INSTRUCTIONS</summary>
+                    </details>
+                    <details style="margin-bottom: 10px;">
+                        <summary style="font-family: 'Open Sans', sans-serif; font-weight: bold; cursor: pointer;">STORAGE INSTRUCTIONS</summary>
+                    </details>
+                </div>
+            </section>
+
+            <section style="padding: 20px;">
+                <h2 style="font-size: 24px; font-family: 'Noto Sans', sans-serif; font-weight: 700; margin-bottom: 10px;">PRODUCT DETAILS</h2>
+                <p style="font-family: 'Open Sans', sans-serif; font-size: 14px; color: #333;">
+                    a2 Milk is no ordinary milk! It is real milk that may be easier on digestion for some people.* As the number 1 producer of A1 protein free milk in Australia, our purpose is to pioneer the future of dairy for good. For more information on the a2 Milk difference visit www.a2milk.com.au.*a2 Milk comes from cows specially selected to naturally produce milk with only the A2-type beta-casein protein so may be easier on digestion than ordinary milk for some milk intolerant individuals when consumed as part of a healthy, varied diet.
+                </p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
