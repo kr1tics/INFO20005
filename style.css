@@ -573,13 +573,13 @@ header {
 .delivery-address {
     flex: 1;
     background-color: #f9f9f9;
+    border: 1px solid #d9d9d9;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: -20px;
 }
 
 .section-title {
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
     margin-bottom: 15px;
@@ -588,7 +588,7 @@ header {
 .address-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 45px;
 }
 
 .form-row {
@@ -598,8 +598,8 @@ header {
 
 .form-input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 15px;
+    border: 1px solid #ced4d2;
     border-radius: 4px;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
@@ -610,27 +610,27 @@ header {
 }
 
 .cart-summary {
-    width: 300px;
+    width: 400px;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    height: 200px;
 }
 
 .summary-item {
     display: flex;
     justify-content: space-between;
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #d9d9d9;
+    padding: 15px;
 }
 
 .summary-item.total {
     background-color: #09122c;
-    color: #fff;
-    padding: 10px;
-    border-radius: 4px;
+    color: #ffdede;
+    padding: 15px;
     font-weight: bold;
+    
 }
 
 .place-order-btn {
@@ -641,11 +641,13 @@ header {
     padding: 15px;
     border-radius: 8px;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
     text-align: center;
     margin-top: 50px;
+    text-decoration: none;
+    display: block;
 }
 
 .place-order-btn:hover {
