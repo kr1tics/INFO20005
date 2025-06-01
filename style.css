@@ -551,6 +551,108 @@ header {
     text-decoration: none;
     }
 
+.checkout-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.checkout-title {
+    font-size: 50px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.checkout-content {
+    display: flex;
+    gap: 20px;
+}
+
+.delivery-address {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 18px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.address-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+.form-input.half-width {
+    width: 50%;
+}
+
+.cart-summary {
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.summary-item.total {
+    background-color: #09122c;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.place-order-btn {
+    width: 100%;
+    background-color: #e17564;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.place-order-btn:hover {
+    background-color: #d16453;
+}
+
+
 /* Mobile Portrait (390x844) */
 @media (max-width: 390px) {
     header {
