@@ -59,13 +59,13 @@
                         <p>Brand: A2</p>
                     </div>
                 </div>
-                <span class="cart-price">$6.90</span>
+                <span class="cart-price" id="price-1">$6.90</span>
                 <div class="cart-quantity">
-                    <button class="quantity-btn">-</button>
-                    <input type="text" value="1" readonly>
-                    <button class="quantity-btn">+</button>
+                    <button class="quantity-btn" onclick="updateQuantity('quantity-1', -1)">-</button>
+                    <input type="text" id="quantity-1" value="1" readonly>
+                    <button class="quantity-btn" onclick="updateQuantity('quantity-1', 1)">+</button>
                 </div>
-                <span class="cart-total">$6.90</span>
+                <span class="cart-total" id="total-1">$6.90</span>
             </div>
             <div class="cart-item">
                 <div class="cart-product">
@@ -75,23 +75,68 @@
                         <p>Brand: A2</p>
                     </div>
                 </div>
-                <span class="cart-price">$6.90</span>
+                <span class="cart-price" id="price-2">$6.90</span>
                 <div class="cart-quantity">
-                    <button class="quantity-btn">-</button>
-                    <input type="text" value="1" readonly>
-                    <button class="quantity-btn">+</button>
+                    <button class="quantity-btn" onclick="updateQuantity('quantity-2', -1)">-</button>
+                    <input type="text" id="quantity-2" value="1" readonly>
+                    <button class="quantity-btn" onclick="updateQuantity('quantity-2', 1)">+</button>
                 </div>
-                <span class="cart-total">$6.90</span>
+                <span class="cart-total" id="total-2">$6.90</span>
             </div>
+        </div>
+        <div class="cart-total-section">
+            <span class="cart-total-label">TOTAL PRICE:</span>
+            <span class="cart-total-price" id="overall-total">$13.80</span>
         </div>
         <div class="cart-footer">
             <a href="#" class="continue-shopping-btn">CONTINUE SHOPPING</a>
-            <div class="cart-total-section">
-                <span class="cart-total-label">TOTAL PRICE:</span>
-                <span class="cart-total-price">$13.80</span>
-            </div>
             <a href="#" class="checkout-btn">CHECKOUT</a>
         </div>
     </div>
+
+    <script>
+        function updateQuantity(quantityId, change) {
+            // Get the quantity input element
+            const quantityInput = document.getElementById(quantityId);
+            let quantity = parseInt(quantityInput.value);
+            
+            // Update quantity, ensuring it doesn't go below 1
+            quantity = Math.max(1, quantity + change);
+            quantityInput.value = quantity;
+
+            // Get the item number from the quantity ID (e.g., 'quantity-1' -> '1')
+            const itemNumber = quantityId.split('-')[1];
+            
+            // Get the price and total elements for this item
+            const priceElement = document.getElementById(`price-${itemNumber}`);
+            const totalElement = document.getElementById(`total-${itemNumber}`);
+            
+            // Extract the price (remove '$' and convert to number)
+            const price = parseFloat(priceElement.textContent.replace('$', ''));
+            
+            // Calculate the new total for this item
+            const newTotal = (price * quantity).toFixed(2);
+            totalElement.textContent = `$${newTotal}`;
+
+            // Update the overall total
+            updateOverallTotal();
+        }
+
+        function updateOverallTotal() {
+            // Get all total elements
+            const totalElements = document.querySelectorAll('.cart-total');
+            let overallTotal = 0;
+
+            // Sum up all item totals
+            totalElements.forEach(element => {
+                const total = parseFloat(element.textContent.replace('$', ''));
+                overallTotal += total;
+            });
+
+            // Update the overall total
+            const overallTotalElement = document.getElementById('overall-total');
+            overallTotalElement.textContent = `$${overallTotal.toFixed(2)}`;
+        }
+    </script>
 </body>
 </html>
