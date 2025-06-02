@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Exotic Groceries</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon">
+            <img src="images/menu.svg" alt="Menu">
+        </div>
+        <div class="logo">
+            <img src="images/store_logo.png" alt="Exotic Groceries Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products..." oninput="showSuggestions(this.value)">
+            <img src="images/search.svg" alt="Search" class="search-icon">
+            <div class="suggestions" id="suggestions"></div>
+        </div>
+        <div class="icons">
+            <div class="icon-wrapper">
+                <img src="images/account.svg" alt="Account">
+                <span class="icon-label">Accounts</span>
+            </div>
+            <div class="icon-wrapper">
+                <div class="wishlist">
+                <img src="images/wishlist.svg" alt="Wishlist">
+                <span class="badge">0</span>
+                </div>
+                <span class="icon-label">Wishlist</span>
+            </div>
+            <div class="icon-wrapper">
+                <div class="cart">
+                    <img src="images/cart.svg" alt="Cart">
+                    <span class="badge">0</span>
+                 </div>
+                <span class="icon-label">Cart</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="cart-container">
+        <h1 class="cart-title">Shopping Cart</h1>
+        <div class="cart-table">
+            <div class="cart-header">
+                <span>Product</span>
+                <span>Price</span>
+                <span>Quantity</span>
+                <span>Total</span>
+            </div>
+            <div class="cart-item">
+                <div class="cart-product">
+                    <img src="images/A2_LightMilk.png" alt="A2 Milk Light Milk 2L">
+                    <div class="cart-product-info">
+                        <h3>A2 Milk Light Milk 2L</h3>
+                        <p>Brand: A2</p>
+                    </div>
+                </div>
+                <span class="cart-price">$6.90</span>
+                <div class="cart-quantity">
+                    <button class="quantity-btn">-</button>
+                    <input type="text" value="1" readonly>
+                    <button class="quantity-btn">+</button>
+                </div>
+                <span class="cart-total">$6.90</span>
+            </div>
+            <div class="cart-item">
+                <div class="cart-product">
+                    <img src="images/A2_FullCream.png" alt="A2 Milk Full Cream Milk 2L">
+                    <div class="cart-product-info">
+                        <h3>A2 Milk Full Cream Milk 2L</h3>
+                        <p>Brand: A2</p>
+                    </div>
+                </div>
+                <span class="cart-price">$6.90</span>
+                <div class="cart-quantity">
+                    <button class="quantity-btn">-</button>
+                    <input type="text" value="1" readonly>
+                    <button class="quantity-btn">+</button>
+                </div>
+                <span class="cart-total">$6.90</span>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <a href="#" class="continue-shopping-btn">CONTINUE SHOPPING</a>
+            <div class="cart-total-section">
+                <span class="cart-total-label">TOTAL PRICE:</span>
+                <span class="cart-total-price">$13.80</span>
+            </div>
+            <a href="#" class="checkout-btn">CHECKOUT</a>
+        </div>
+    </div>
+</body>
+</html>
