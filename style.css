@@ -817,31 +817,54 @@ header {
 
 
 /* Mobile Portrait (390x844) */
-@media (max-width: 390px) {
+@media (max-width: 391px) {
     header {
         padding: 10px;
         flex-wrap: wrap;
+        position: relative;
+    }
+    
+    .menu-icon {
+        order:2;
+    }
+
+    .logo {
+        order: 1;
     }
 
     .logo img {
-        width: 100px;
-        height: 33px;
+        width: 200px;
+        height: 28px;
+        margin-right: -5px;
+        margin-left: 5px;
     }
 
     .search-bar {
+        order: 2;
+        flex-grow: 0.5;
         margin: 10px 0;
-        order: 3;
-        width: 100%;
+        justify-content: right;
     }
 
     .icons {
+        order: 1;
         gap: 5px;
     }
 
+    .icon-label {
+        display: none;
+    }
+
     .banner {
-        width: calc(100%-20px);
+        width: 100%;
+        height: 200px; /* Adjusted to match screenshot proportions */
+        margin: 0;
+    }   
+
+    .banner img{
+        width: 100%;
         height: 200px;
-        margin: 0 10px;
+        object-fit: cover;
     }
 
     .breadcrumb {
@@ -873,13 +896,50 @@ header {
     }
 
     .products {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: space-between;
+        gap: 10px;
     }
+    
 
     .product-card {
-        width: 100%;
-        max-width: 350px;
+        width: 48%;
+        max-width: none;
+        height: auto;
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    .product-card:nth-child(n+3) {
+        display: none;
+    }
+
+    .product-card img:not(.wishlist) {
+        height: 100px; /* Adjusted to fit smaller card size */
+    }
+
+    .product-card h3 {
+        font-size: 14px; /* Slightly smaller font to fit */
+    }
+
+    .product-card p {
+        font-size: 12px; /* Smaller font for price */
+        margin-top: 20px; /* Reduced margin to fit */
+        margin-bottom: 20px;
+    }
+
+    .product-card .add-to-cart input {
+        width: 80px; /* Smaller input field */
+        height: 30px;
+        margin-left: -10px;
+    }
+
+    .product-card .add-to-cart button {
+        width: 90px; /* Smaller button */
+        margin-right: -10px;
+        padding: 8px;
+        font-size: 10px;
     }
 
     .search-results,
@@ -889,11 +949,19 @@ header {
 
     .search-results h2,
     .specials h2 {
-        font-size: 28px;
+        font-size: 20px;
+    }
+
+    .specials{
+        margin-top: 10px;
     }
 
     .view-all {
         display: block; 
+        border: 1px solid #ff8c00; /* Add border to match screenshot */
+        background-color: #ffffff;
+        padding: 10px 10px;
+        border-radius: 10px;
     }
 }
 
