@@ -823,13 +823,19 @@ header {
         flex-wrap: wrap;
         position: relative;
     }
-    
+
     .menu-icon {
         order:2;
+        width:30px;
     }
 
     .logo {
         order: 1;
+    }
+
+    .logo2 img{
+        width:240px;
+        height: 25px;
     }
 
     .logo img {
@@ -925,8 +931,8 @@ header {
 
     .product-card p {
         font-size: 12px; /* Smaller font for price */
-        margin-top: 20px; /* Reduced margin to fit */
-        margin-bottom: 20px;
+        margin-top: 10px; /* Reduced margin to fit */
+        margin-bottom: 10px;
     }
 
     .product-card .add-to-cart input {
@@ -962,6 +968,120 @@ header {
         background-color: #ffffff;
         padding: 10px 10px;
         border-radius: 10px;
+    }
+
+    .filter-sidebar {
+        display: none;
+    }
+
+    .breadcrumb {
+        margin-left: -10px;
+        margin-top: -12px;
+    }
+
+    .sort-options label {
+        display: none;
+    }
+
+    .sort-options {
+        justify-content: right;
+        margin-right: -5px;
+    }
+
+    .products-grid {
+        display: grid; /* Use grid layout */
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        grid-template-rows: repeat(2, auto); /* Two rows */
+        gap: 10px; /* Add some spacing between cards */
+        align-items: center;
+        justify-items: center;
+    }
+
+    .product-card {
+        width: 150px;
+        height: 280px;
+    }
+
+    .product-card:nth-child(n+3) {
+        display: block; /* Ensure all cards are visible */
+    }
+
+    .product-card h3 {
+        font-size: 13px;
+    }
+
+    .product-details {
+        display: none;
+    }
+
+    .product-info details {
+        display: none;
+    }
+
+    .cart-title {
+        font-size: 30px;
+    }
+
+    .cart-header{
+        display: none;
+    }
+
+    .cart-product-info p {
+        display: none;
+    }
+
+
+    .cart-total {
+        display: none;
+    }
+
+    .confirmation-title {
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .confirmation-box {
+        height: 600px;
+        width: 300px;
+        margin-left: 45px;
+    }
+
+    .checkmark {
+        width: 180px;
+        height: 180px;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto 20px;
+    }
+
+    .checkmark::before {
+        content: "✔";
+        font-size: 100px;
+        color: #fff;
+    }
+    
+    .confirmation-text {
+        font-size: 24px;
+    }
+
+    .order-number {
+        font-size: 14px;
+    }
+
+    .continue-button {
+    background-color: #fff;
+    color: #e17564;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    text-decoration: none;
     }
 }
 
