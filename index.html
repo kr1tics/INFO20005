@@ -18,17 +18,26 @@
         <div class="search-bar">
             <input type="text" placeholder="Search products..." oninput="showSuggestions(this.value)">
             <img src="images/search.svg" alt="Search" class="search-icon">
-            <div class="suggestions" id="suggestions"></div>
+            <a href="search.html" class="suggestions" id="suggestions"></a>
         </div>
         <div class="icons">
-            <img src="images/account.svg" alt="Account">
-            <div class="wishlist">
+            <div class="icon-wrapper">
+                <img src="images/account.svg" alt="Account">
+                <span class="icon-label">Accounts</span>
+            </div>
+            <div class="icon-wrapper">
+                <div class="wishlist">
                 <img src="images/wishlist.svg" alt="Wishlist">
                 <span class="badge">0</span>
+                </div>
+                <span class="icon-label">Wishlist</span>
             </div>
-            <div class="cart">
-                <img src="images/cart.svg" alt="Cart">
-                <span class="badge">0</span>
+            <div class="icon-wrapper">
+                <div class="cart">
+                    <img src="images/cart.svg" alt="Cart">
+                    <span class="badge">0</span>
+                 </div>
+                <span class="icon-label">Cart</span>
             </div>
         </div>
     </header>
@@ -45,7 +54,7 @@
                 <img src="images/indomie.png" alt="Indomie Mi Goreng Noodle 85g">
                 <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('Indomie Mi Goreng Noodle 85g')"> 
                 <h3>INDOMIE MI GORENG NOODLE 85G</h3>
-                <p>$0.70 ea</p>
+                <p><b>$0.70</b> ea</p>
                 <div class="add-to-cart">
                     <input type="number" value="0" min="0">
                     <button onclick="addToCart('Indomie Mi Goreng Noodle 85g', this)">ADD TO CART</button>
@@ -55,7 +64,7 @@
                 <img src="images/shin.png" alt="Nongshim Shin Ramyun Noodle Soup 120g">
                 <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('Nongshim Shin Ramyun Noodle Soup 120g')">
                 <h3>NONGSHIM SHIN RAMYUN NOODLE SOUP 120G</h3>
-                <p>$1.60 ea</p>
+                <p><b>$1.60</b> ea</p>
                 <div class="add-to-cart">
                     <input type="number" value="0" min="0">
                     <button onclick="addToCart('Nongshim Shin Ramyun Noodle Soup 120g', this)">ADD TO CART</button>
@@ -65,7 +74,7 @@
                 <img src="images/samyang.png" alt="Samyang Carbo Hot Chicken Flv Ramen 130g">
                 <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('Samyang Carbo Hot Chicken Flv Ramen 130g')">
                 <h3>SAMYANG CARBO HOT CHICKEN FLV RAMEN 130G</h3>
-                <p>$3.40 ea</p>
+                <p><b>$3.40</b> ea</p>
                 <div class="add-to-cart">
                     <input type="number" value="0" min="0">
                     <button onclick="addToCart('Samyang Carbo Hot Chicken Flv Ramen 130g', this)">ADD TO CART</button>
@@ -75,7 +84,7 @@
                 <img src="images/indomie.png" alt="Indomie Mi Goreng Noodle 85g">
                 <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('Indomie Mi Goreng Noodle 85g')">
                 <h3>INDOMIE MI GORENG NOODLE 85G</h3>
-                <p>$0.70 ea</p>
+                <p><b>$0.70</b> ea</p>
                 <div class="add-to-cart">
                     <input type="number" value="0" min="0">
                     <button onclick="addToCart('Indomie Mi Goreng Noodle 85g', this)">ADD TO CART</button>
