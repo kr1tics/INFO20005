@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <header>
+    <header>
         <div class="menu-icon">
             <img src="images/menu.svg" alt="Menu">
         </div>
@@ -18,17 +18,26 @@
         <div class="search-bar">
             <input type="text" placeholder="Search products..." oninput="showSuggestions(this.value)">
             <img src="images/search.svg" alt="Search" class="search-icon">
-            <div class="suggestions" id="suggestions"></div>
+            <a href="search.html" class="suggestions" id="suggestions"></a>
         </div>
         <div class="icons">
-            <img src="images/account.svg" alt="Account">
-            <div class="wishlist">
+            <div class="icon-wrapper">
+                <img src="images/account.svg" alt="Account">
+                <span class="icon-label">Accounts</span>
+            </div>
+            <div class="icon-wrapper">
+                <div class="wishlist">
                 <img src="images/wishlist.svg" alt="Wishlist">
                 <span class="badge">0</span>
+                </div>
+                <span class="icon-label">Wishlist</span>
             </div>
-            <div class="cart">
-                <img src="images/cart.svg" alt="Cart">
-                <span class="badge">0</span>
+            <div class="icon-wrapper">
+                <div class="cart">
+                    <img src="images/cart.svg" alt="Cart">
+                    <span class="badge">0</span>
+                 </div>
+                <span class="icon-label">Cart</span>
             </div>
         </div>
     </header>
@@ -36,15 +45,16 @@
 
 
     <section class="search-results">
-        <h2>Search Results for "Milk"</h2>    
-        <div class="breadcrumb">
-        <a href="index.html">Home</a> &gt; Search Results for "Milk"
-        </div>
-        <div class="layout-container">
+        <h2>Search Results for "Milk"</h2>
+            <div class="breadcrumb">
+            <a href="index.html">Home</a> > Search Results for "Milk"
+            </div>
+        <div class="layout-container">   
             <div class="filter-sidebar">
-                <h3>Filter by Category</h3>
-                <label><input type="checkbox" name="category" value="noodles" onchange="filterProducts()"> Noodles</label>
-                <label><input type="checkbox" name="category" value="ramen" onchange="filterProducts()"> Ramen</label>
+                <h3>Filter</h3>
+                <label><input type="checkbox" name="category" value="a2" onchange="filterProducts()"> A2</label>
+                <label><input type="checkbox" name="category" value="diaryfarm" onchange="filterProducts()"> Dairy Farmers</label>
+                <label><input type="checkbox" name="category" value="rivernia" onchange="filterProducts()"> Rivernia</label>
             </div>
             <div class="main-content">
                 <div class="sort-options">
@@ -57,7 +67,7 @@
                 </div>
                 <div class="products-grid">
                     <div class="product-card">
-                        <img src="images/A2_LightMilk.png" alt="A2 Milk Light Milk 2L">
+                        <a href="product.html"> <img src="images/A2_LightMilk.png" alt="A2 Milk Light Milk 2L"></a>
                         <img class="wishlist" src="images/heart.svg" alt="Wishlist" onclick="addToWishlist('A2 Milk Light Milk 2L')">
                         <h3>A2 Milk Light Milk 2L</h3>
                         <p><b>$6.90</b> ea</p>
@@ -200,7 +210,6 @@
                 } else if (sortOption === 'price-high') {
                     return priceB - priceA;
                 } else {
-                    // Default to relevance (no sorting for now)
                     return 0;
                 }
             });
